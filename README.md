@@ -5,6 +5,8 @@ It has attributes such as an area (in square feet) and a door with a color. The 
 <br> The SmallApartment class is a subclass of House with a fixed area of 500 square feet. Its toString method provides a description of the small apartment. </br>
 <br> The Person class represents an individual with a name that lives in either a house or small apartment. Its toString method displays their name, the type of residence they live, the area of the residence, and the color of the door if applicable.
 
+> **Note**: This project was originally part of a private GitLab repository and has been migrated to GitHub as an independent repository. As a result, the commit history starts from the migration point.
+
 ## Developer Documentation
 <dl>
 The 'Main' class serves as the entry point of the program, demonstrating interactions between objects of the 'House', 'Person', and 'SmallApartment' classes. It creates instances of houses, small apartments, and people. It demonstrates various scenarios, like modifying house attributes and assigning people to different types of residences.
