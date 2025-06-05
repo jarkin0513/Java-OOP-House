@@ -4,11 +4,15 @@ A Java program that demonstrates object-oriented programming concepts including 
 
 
 ## Problem Statement
-This program addresses the creation of an application that demonstrates the principles object-oriented programming and inheritance. A hierarchy of classes is created that uses inheritance to represent the two different residential types (a house and a small apartment). It utilizes polymorphism to determine the type of residence a person lives in.
-<br>The main class is the House class. 
-It has attributes such as an area (in square feet) and a door with a color. The toString method provides a description of the house, including its area and door color. </br>
-<br> The SmallApartment class is a subclass of House with a fixed area of 500 square feet. Its toString method provides a description of the small apartment. </br>
-<br> The Person class represents an individual with a name that lives in either a house or small apartment. Its toString method displays their name, the type of residence they live, the area of the residence, and the color of the door if applicable.
+This program demonstrates the principles of object-oriented programming and inheritance. A hierarchy of classes is created to represent two different residential types — a house and a small apartment. It utilizes polymorphism to determine the type of residence a person lives in.
+
+- House: A class with attributes like area (in square feet) and a door with a color.
+
+- SmallApartment: A subclass of House with a fixed area of 500 square feet.
+
+- Person: A class representing an individual associated with either a house or a small apartment.
+
+The program demonstrates class relationships, method overriding, and composition through these entities.
 
 > **Note**: This project was originally part of a private GitLab repository and has been migrated to GitHub as an independent repository. As a result, the commit history starts from the migration point.
 
@@ -22,26 +26,44 @@ It has attributes such as an area (in square feet) and a door with a color. The 
 - Unit Testing (JUnit)
 
 ## Developer Documentation
-<dl>
-The 'Main' class serves as the entry point of the program, demonstrating interactions between objects of the 'House', 'Person', and 'SmallApartment' classes. It creates instances of houses, small apartments, and people. It demonstrates various scenarios, like modifying house attributes and assigning people to different types of residences.
-<br> The 'House' class represents just a generic house with attributes such as area and a door with a door color. The goal is to demonstrate object-orientated programming ideas, including encapsulation, constructors, setters, getters, and method overriding. </br>
-<br> I set up 'House' to have two constructors, one for initializing the area to 1500 square feet and setting the door color to be white, as well as a constructor that is parameterized to set the area of the sub class 'SmallApartment'. Because I used the key word 'super' for the 'SmallApartment' constructor and it was an integer, it had to have that second constructor in 'House' that was parametrized for the int area. The 'House' class includes getter and setter methods for the area and the door. I decided to opt out of validity checking for the setters because I did not deem them to be completely necessary for the kind of program this is. If it was an application to be used by others, I would have included them. </br>
-<br> A method called 'toString' is included to display information regarding the specific house object, which includes its area. </br>
-<br> The one notable method I decided to include later towards the end of development was the 'getHouseDescription' method. This method is used to get a description of the type of residence. Inside 'House' it returns "a house" and in 'SmallApartment' it gets overridden to return "a small apartment". This was done to make the 'Person's class 'toString' method easier to function and easier to understand. This ensures that a person living in a house would have the house's description and a person in a small apartment would have the apartment's description. </br>
-<br> </br>
 
-<br> The 'Door' class which is nested within 'House' encapsulates the door's color and demonstrates the concept of nested classes. </br>
-<br> There was not a lot that went into the creation of this class. It includes a simple constructor  to initialize the door with a specified color, setters and getters for its color, and its own 'toString' method to generates a description of the door, including its color. </br>
-<br> </br>
+### Main Class
+- The ```Main``` class serves as the entry point of the program.
+- It demonstrates interactions between ```House```, ```SmallApartment```, and ```Person``` objects, creating instances and displaying their details.
 
-<br> The 'SmallApartment' class is a sub class of 'House'. The purpose of this class is to extend the 'House' class. It represents another specific type of residence with a predefined area of 500 square feet. Inheritance and method overriding are demonstrated within this class. </br>
-<br> Its constructor simply just sets its area to that set 500 square feet. It uses the 'super' keyword to call the parent constructor, which in this case is the 'House' class parameterized constructor. The two overridden methods within this class include the 'toString' and 'getHouseDescription' methods from 'House'. The 'toString' is meant to provide a description of the small apartment including its area. The 'getHouseDescription' is used to just return, "a small apartment" like previously mentioned regarding the 'House' class. </br>
-<br> Based on problem specifications, a 'toString' method was not mentioned to be included within this class. Because of the freedom we were presented with for creating this programs, I decided to add it in. This helped ensure that 'SmallApartment' objects would display the correct information when this method was called. During development, I encountered an issue where the 'SmallApartment' objects would display information about a house, but this fixed that up and in a simple manner. </br>
-<br> </br>
+### House Class
+- Represents a generic house with an area and a door.
+- Demonstrates encapsulation with private attributes and public getters/setters.
+- Includes two constructors:
+   - A default constructor setting the area to 1500 sq ft and the door color to white.
+   - A parameterized constructor to allow subclass customization.
 
-<br> The 'Person' class represents an individual with a name and a place where they live. This class demonstrates composition by referencing a 'House' object, modeling the relationship between a person and their residence. A 'Person' object contains a reference to a 'House' object to represent where they live. </br>
-<br> The constructor of this class contains two parameters, a string for the person's name, and a reference to 'House' to initialize their house. I opted to only include a getter for the person's name since it is just retrieving what it was already set as in the constructor. A 'toString' method is included within this class in order to display information about what type of residence they live  in, its area, and details about its door if available. This method calls 'getHouseDescription' from either 'House' or 'SmallApartment', depending on the type of residence. If the 'getDoor' method from the house object does not return null, then the 'toString' method knows that the person lives in a house with a door and includes it within the description printed. </br>
-<br> </br>
+- Provides a ```toString()``` method to display house details.
+
+- The ```getHouseDescription()``` method returns "a house" — overridden by subclasses.
+
+### Door Class
+- A nested class within ```House```.
+
+- Encapsulates door properties like color.
+
+- Provides a ```toString()``` method to describe the door.
+
+### SmallApartment Class
+- Inherits from ```House```.
+
+- Overrides ```toString()``` and ```getHouseDescription()```.
+
+- Automatically sets the area to 500 sq ft.
+
+- Demonstrates inheritance and method overriding.
+
+### Person Class
+- Represents an individual with a name and a residence.
+
+- Demonstrates composition by holding a reference to a ```House``` object.
+
+- The ```toString()``` method dynamically adjusts its output based on whether the person lives in a ```House``` or ```SmallApartment```, and includes door details when applicable.
 
 <br> More details regarding the specifics of each class, method, and variable can be found within the JavaDocs as well as in-line comments located in the source files.
 
