@@ -1,3 +1,8 @@
+# OOP Residential Modeling System
+
+A Java program that demonstrates object-oriented programming concepts including inheritance, composition, method overriding, and polymorphism. The system models people living in houses and small apartments, showcasing class hierarchy and relationships.
+
+
 ## Problem Statement
 This program addresses the creation of an application that demonstrates the principles object-oriented programming and inheritance. A hierarchy of classes is created that uses inheritance to represent the two different residential types (a house and a small apartment). It utilizes polymorphism to determine the type of residence a person lives in.
 <br>The main class is the House class. 
@@ -6,6 +11,15 @@ It has attributes such as an area (in square feet) and a door with a color. The 
 <br> The Person class represents an individual with a name that lives in either a house or small apartment. Its toString method displays their name, the type of residence they live, the area of the residence, and the color of the door if applicable.
 
 > **Note**: This project was originally part of a private GitLab repository and has been migrated to GitHub as an independent repository. As a result, the commit history starts from the migration point.
+
+## Concepts Demonstrated
+- Object-Oriented Programming (OOP)
+- Inheritance
+- Polymorphism
+- Method Overriding
+- Encapsulation
+- Composition
+- Unit Testing (JUnit)
 
 ## Developer Documentation
 <dl>
@@ -25,8 +39,8 @@ The 'Main' class serves as the entry point of the program, demonstrating interac
 <br> Based on problem specifications, a 'toString' method was not mentioned to be included within this class. Because of the freedom we were presented with for creating this programs, I decided to add it in. This helped ensure that 'SmallApartment' objects would display the correct information when this method was called. During development, I encountered an issue where the 'SmallApartment' objects would display information about a house, but this fixed that up and in a simple manner. </br>
 <br> </br>
 
-<br> The 'Person' class represents an individual with a name and a place where they live. This class demonstrates the use of composition by holding instances of the 'House' class as an attribute. This is not the "classic" use of composition since the 'Person' class does not own the 'House' class, rather it references it. A 'Person' object contains a reference to a 'House' object to represent where they live. </br>
-<br> The constructor of this class contains two parameters, a string for the person's name, and a reference to 'House' to initialize their house. I opted to only include a getter for the person's name since it is just retrieving what it was already set as in the constructor. A 'toString' method is included within this class in order to display information about what type of residence they live  in, its area, and details about its door if available. This method uses the 'getHouseDescription' from either the 'House' or 'SmallApartment' classes depending on where they live. If the 'getDoor' method from the house object does not return null, then the 'toString' method knows that the person lives in a house with a door and includes it within the description printed. </br>
+<br> The 'Person' class represents an individual with a name and a place where they live. This class demonstrates composition by referencing a 'House' object, modeling the relationship between a person and their residence. A 'Person' object contains a reference to a 'House' object to represent where they live. </br>
+<br> The constructor of this class contains two parameters, a string for the person's name, and a reference to 'House' to initialize their house. I opted to only include a getter for the person's name since it is just retrieving what it was already set as in the constructor. A 'toString' method is included within this class in order to display information about what type of residence they live  in, its area, and details about its door if available. This method calls 'getHouseDescription' from either 'House' or 'SmallApartment', depending on the type of residence. If the 'getDoor' method from the house object does not return null, then the 'toString' method knows that the person lives in a house with a door and includes it within the description printed. </br>
 <br> </br>
 
 <br> More details regarding the specifics of each class, method, and variable can be found within the JavaDocs as well as in-line comments located in the source files.
